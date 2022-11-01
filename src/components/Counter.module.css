@@ -1,0 +1,16 @@
+.btn {
+    background-color: #fff;
+    border: none;
+    margin-left: 20px;
+}
+
+.counter {
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score {
+    margin-right: 20px;
+}

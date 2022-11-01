@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
+import User from './components/User';
+import UserList from './components/UserList';
 
 function App() {
+
+  const [players, setPlayers] = useState([]);
+
+  const addContact = (user) => {
+  
+    if(players) {
+      setPlayers([...players, user]);
+
+    }
+    
+  };
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <User addContact={addContact}/>
+      <h1 style={{color:'#228B22'}}>UNO SCORE</h1>
+      <UserList contacts={players} />
+  
     </div>
   );
 }
